@@ -99,7 +99,7 @@
 				TargetAttributes = {
 					BCA6C5031DF37FB900FF64DE = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = WJ26RLBF55;
+						DevelopmentTeam = 9NXY77FAB6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -265,7 +265,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WJ26RLBF55;
+				DEVELOPMENT_TEAM = 9NXY77FAB6;
 				INFOPLIST_FILE = BubbleButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yagiz.lag.BubbleButton;
@@ -278,7 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WJ26RLBF55;
+				DEVELOPMENT_TEAM = 9NXY77FAB6;
 				INFOPLIST_FILE = BubbleButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yagiz.lag.BubbleButton;
@@ -306,6 +306,7 @@
 				BCA6C5181DF37FBA00FF64DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

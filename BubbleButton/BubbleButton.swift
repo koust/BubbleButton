@@ -30,7 +30,7 @@ open class BubbleButton : UIButton
         }
     }
     
-
+    
     public var defaultTitle:String!
     @IBInspectable public var titleForProgress:String!
     @IBInspectable public var titleForCompletion:String!
@@ -55,7 +55,7 @@ open class BubbleButton : UIButton
     var bubbles:[BubbleView] = []
     
     var updateder:CADisplayLink!
-
+    
     var initted:Bool = false
     
     var bigBubble:BubbleView!
@@ -106,12 +106,12 @@ open class BubbleButton : UIButton
             self.bubbleDirectionMultiplier =  CGPoint(x: 0, y: -1)
         case .Right:
             self.bubbleDirectionMultiplier =  CGPoint(x: 1, y: 0)
-        
+            
         case .BottomLeft:
             self.bubbleDirectionMultiplier =  CGPoint(x: -1, y: -1)
         case .BottomRight:
             self.bubbleDirectionMultiplier =  CGPoint(x: 1, y: -1)
-    
+            
         case .TopRight:
             self.bubbleDirectionMultiplier =  CGPoint(x: -1, y: 1)
         case .TopLeft:
@@ -155,7 +155,7 @@ open class BubbleButton : UIButton
     {
         let finishX = startCenter.x - self.bubbleDirectionMultiplier.x * self.frame.size.width * 2
         let finishY = startCenter.y - self.bubbleDirectionMultiplier.y * self.frame.size.height * 2
-     
+        
         return CGPoint(x: finishX,
                        y: finishY)
     }
@@ -177,7 +177,7 @@ open class BubbleButton : UIButton
         
     }
     
-    func updateBubbles()
+    @objc func updateBubbles()
     {
         let selfRect = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         
@@ -185,7 +185,7 @@ open class BubbleButton : UIButton
         {
             bubbleView.center = CGPoint(x: bubbleView.center.x - bubbleView.velocity.x * self.bubbleDirectionMultiplier.x,
                                         y: bubbleView.center.y - bubbleView.velocity.y * self.bubbleDirectionMultiplier.y)
-
+            
             var shouldRefresh = false
             if self.bubbleDirectionMultiplier.x > 0
             {
@@ -233,7 +233,7 @@ open class BubbleButton : UIButton
         
         self.updateder = CADisplayLink(target: self, selector: #selector(self.updateBubbles))
         self.updateder.preferredFramesPerSecond = 60
-        self.updateder.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+        self.updateder.add(to: RunLoop.current, forMode: RunLoop.Mode.commonModes)
         
         self.setTitle(self.titleForProgress, for: .normal)
     }
@@ -267,7 +267,7 @@ open class BubbleButton : UIButton
             
             self.clearBubbles()
             
-    
+            
             
             DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(self.fadeOutAnimationDelay))
             {
@@ -288,7 +288,7 @@ open class BubbleButton : UIButton
     
     func clearBubbles()
     {
-        self.updateder.remove(from: RunLoop.current, forMode: RunLoopMode.commonModes)
+        self.updateder.remove(from: RunLoop.current, forMode:RunLoop.Mode.commonModes)
         self.updateder.invalidate()
         
         for bubbleView in self.bubbles
